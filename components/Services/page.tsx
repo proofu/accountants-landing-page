@@ -1,70 +1,24 @@
 
-// import Image from "next/image";
-
-// const Services = () => {
-//   return (
-//     <div className="bg-black">
-//     {/* <div className="flex flex-col md:flex-row place-items-start  bg-black text-white px-10 w-2/3 mx-auto "> */}
-//     <div className="flex size-full place-items-center  bg-black text-white px-10 ">
-
-//       {/* Space between sections */}
-//       {/* <div className="w-full h-[6px] md:w-50 md:h-auto"></div> */}
-
-//       {/* Left Section: Title & Image */}
-//       <div className=" text-left">
-//         <h2 className="text-4xl font-bold leading-tight">
-//           Nuestros <br /> servicios
-//         </h2>
-//         <div className="mt-2">
-//           <Image
-//             src="/pen.png"
-//             alt="Pen on Paper"
-//             width={400}
-//             height={200}
-//             className="rounded-lg"
-//           />
-//         </div>
-//       </div>
-
-//       {/* Space between sections */}
-//       <div className="w-full h-[6px] md:w-30 md:h-auto"></div>
-
-//       {/* Right Section: Services List (Aligned to the right) */}
-//       <div className="w-2/3 flex flex-col gap-12 text-left">
-//         <div>
-//           <h3 className="text-gray-400 text-3xl font-semibold">
-//             01 <span className="text-white">Borrador de la renta</span>
-//           </h3>
-//           <p className="text-gray-300 text-sm">
-//             Te hacemos la declaración de la renta
-//           </p>
-//         </div>
-//         <div>
-//           <h3 className="text-gray-400 text-3xl font-semibold">
-//             02 <span className="text-white">Paquete de inicio</span>
-//           </h3>
-//           <p className="text-gray-300 text-sm">
-//             Construimos modelos financieros para presentar a los inversores
-//           </p>
-//         </div>
-//         <div>
-//           <h3 className="text-gray-400 text-3xl font-semibold">
-//             03 <span className="text-white">Gestión de patrimonio</span>
-//           </h3>
-//           <p className="text-gray-300 text-sm">
-//             Proporcionamos servicios de asesoramiento de inversión bien pensados
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//     </div>
-//   );
-// };
-
-// export default Services;
-
-
 import Image from "next/image";
+
+type Service = {
+  id:number
+  title:string,
+  description:string
+}
+const services: Service[] = [
+  {
+    id: 1,
+    title: "Borrador de la renta",
+    description: "Te hacemos la declaración de la renta"
+    },
+  {id: 2,title: "Paquete de inicio",
+    description: "Construimos modelos financieros para presentar a los inversores"
+    },
+  {id: 3,title: "Gestión de patrimonio",
+    description: "Proporcionamos servicios de asesoramiento de inversión bien pensados"
+    }
+]
 
 const Services = () => {
   return (
@@ -92,30 +46,16 @@ const Services = () => {
 
         {/* Right Section: Services List (60%) */}
         <div className="md:w-3/5 w-full flex flex-col gap-12 ">
-          <div>
-            <h3 className="text-gray-400 text-3xl font-semibold">
-              01 <span className="text-white">Borrador de la renta</span>
-            </h3>
-            <p className="text-gray-300 text-sm">
-              Te hacemos la declaración de la renta
-            </p>
-          </div>
-          <div>
-            <h3 className="text-gray-400 text-3xl font-semibold">
-              02 <span className="text-white">Paquete de inicio</span>
-            </h3>
-            <p className="text-gray-300 text-sm">
-              Construimos modelos financieros para presentar a los inversores
-            </p>
-          </div>
-          <div>
-            <h3 className="text-gray-400 text-3xl font-semibold">
-              03 <span className="text-white">Gestión de patrimonio</span>
-            </h3>
-            <p className="text-gray-300 text-sm">
-              Proporcionamos servicios de asesoramiento de inversión bien pensados
-            </p>
-          </div>
+        {services.map((service,index) => (
+          <div key={index} className="relative group">
+          <h3 className="text-gray-400 text-3xl font-semibold">
+          {service.id < 10 ? `0${service.id}` : service.id} <span className="text-white">{service.title}</span>
+          </h3>
+          <p className="text-gray-300 text-sm">
+            {service.description}
+          </p>
+        </div>          
+        ))}
         </div>
       </div>
     </div>
