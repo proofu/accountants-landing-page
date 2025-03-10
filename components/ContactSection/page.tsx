@@ -24,11 +24,11 @@ export default function ContactSection() {
   return (
     <div className="bg-[#141414] text-white px-10 py-16">
       <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center md:items-start">
-        {/* Left: Text + Image */}
+        
         <div className="md:w-1/2">
           <h2 className="text-4xl font-bold mb-6">Trabajemos juntos.</h2>
           <Image
-            src="/trabajemos.png" // Make sure to put the image in /public
+            src="/trabajemos.png" 
             alt="Handshake"
             width={600}
             height={400}
@@ -36,7 +36,7 @@ export default function ContactSection() {
           />
         </div>
 
-        {/* Right: Contact Info */}
+        
         <div className="md:w-1/2 md:pl-12 mt-10 md:mt-0 pt-28">
         {contacts.map((contact,index) => (  
              <div key={index} className="mb-6"> 

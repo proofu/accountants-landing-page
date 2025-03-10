@@ -23,11 +23,11 @@ const services: Service[] = [
 const Services = () => {
   return (
     <div className="bg-black text-white flex justify-center">
-      {/* Main Container with Max Width */}
+      
       <div className="w-full max-w-6xl flex flex-col md:flex-row  gap-50 px-6">
-      {/* <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-50 px-6"> */}
+      
         
-        {/* Left Section: Title & Image (40%) */}
+        
         <div className="md:w-2/5 w-full text-left">
           <h2 className="text-5xl font-bold leading-tight">
             Nuestros <br /> servicios
@@ -37,7 +37,7 @@ const Services = () => {
               src="/pen.png"
               alt="Pen on Paper"
               width={500}  
-              height={300} // Increased height
+              height={300} 
               className="rounded-lg w-full max-w-lg"
             />
           </div>

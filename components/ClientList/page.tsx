@@ -24,7 +24,8 @@ const ClientList = () => {
   return (
     <section className="bg-white text-black py-16 px-6">
       <div className="max-w-6xl mx-auto text-left">
-        {/* Title */}
+
+        
         <h2 className="text-4xl font-bold">Lista de clientes</h2>
         <p className="text-gray-600 mt-4 max-w-2xl ">
           Desde que empezamos, hemos prestado un servicio de confianza a
@@ -32,7 +33,7 @@ const ClientList = () => {
           las siguientes sociedades:
         </p>
 
-        {/* Clients Grid */}
+        
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {clients.map((client, index) => (
             <div key={index} className="relative group">
